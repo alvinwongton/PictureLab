@@ -15,12 +15,15 @@ public class IntArrayWorker
   {
       int count = 0;
       for(int[] row : matrix)
+      {
       for (int pixel : row)  
       {
         if (pixel==n)
         count++;
     }
+    return count;
     }
+}
     
   /**
    * Method to return the total 

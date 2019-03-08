@@ -98,6 +98,22 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void zeroRed()
+  {
+      Pixel[][] picture = this.getPixels2D();
+      for(Pixels[] rows : picture)
+      { 
+          for(Pixel p : rows)
+          {
+              int red = p.getPixel();
+              p.setRed(red-red);
+              
+            }
+        }
+    }
+    
+    
+    
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */
@@ -218,6 +234,7 @@ public class Picture extends SimplePicture
   }
   
   
+    
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
