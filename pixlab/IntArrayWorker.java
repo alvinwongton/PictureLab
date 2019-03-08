@@ -11,7 +11,7 @@ public class IntArrayWorker
     matrix = theMatrix;
   }
   
-  public static void getCount(int n)
+  public void getCount(int n)
   {
       int count = 0;
       for(int[] row : matrix)
@@ -21,7 +21,7 @@ public class IntArrayWorker
         if (pixel==n)
         count++;
     }
-    return count;
+ 
     }
 }
     

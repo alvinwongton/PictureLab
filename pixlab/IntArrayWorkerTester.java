@@ -107,8 +107,8 @@ public class IntArrayWorkerTester
     testSetMatrix();
     testFillPattern1();
     testGetCount(); 
-    //testGetTotal();
-    //testGetTotalNested();
+    testGetTotal();
+    testGetTotalNested();
     //testGetLargest();
     //testGetColTotal();
   }
