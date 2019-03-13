@@ -36,12 +36,21 @@ public class PictureTester
   }
   
   /** Method to test mirrorArms */
-  public static void testMirrorArms()
+  public static void testMirrorLeftArms()
   {
-    Picture snowman = new Picture("snowman.jpg");
-    snowman.explore();
-    snowman.mirrorArms();
-    snowman.explore();
+    Picture arms = new Picture("snowman.jpg");
+    arms.explore();
+    arms.mirrorLeftArms();
+    arms.explore();
+  }
+  
+  /** Method to test mirrorArms */
+  public static void testMirrorRightArms()
+  {
+    Picture arms = new Picture("snowman.jpg");
+    arms.explore();
+    arms.mirrorRightArms();
+    arms.explore();
   }
   
   /** Method to test the collage method */
@@ -76,10 +85,11 @@ public class PictureTester
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
-    testMirrorArms();
+    //testMirrorRightArms();
+    //testMirrorLeftArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    //testCollage();
+    testCollage();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
