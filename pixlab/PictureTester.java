@@ -70,6 +70,17 @@ public class PictureTester
     canvas.explore();
   }
   
+  /** Method to test the copy */
+  public static void testCopy()
+  {
+    Picture gull = new Picture("seagull.jpg");
+    gull.explore();
+    Picture flower = new Picture("flower1.jpg");
+    gull.copy(flower,100,200);
+    gull.explore();
+  }
+  
+  
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
@@ -96,10 +107,10 @@ public class PictureTester
     //testMirrorTemple();
     //testMirrorRightArms();
     //testMirrorLeftArms();
-    testMirrorGull();
+    //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
-    //testCopy();
+    testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
