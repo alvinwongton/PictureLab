@@ -146,7 +146,29 @@ public class Picture extends SimplePicture
   }
   
   
-  
+  /** Mirror just part of a picture of a seagull */
+  public void mirrorGull()
+  {
+    int mirrorPoint = 271;
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    int count = 0;
+    Pixel[][] pixels = this.getPixels2D();
+    
+    // loop through the rows
+    for (int row = 200; row < mirrorPoint; row++)
+    {
+      // loop from 13 to just before the mirror point
+      for (int col = 150; col < 500; col++)
+      {
+        
+        leftPixel = pixels[row][col];      
+        rightPixel = pixels[row]                       
+                         [mirrorPoint - col + mirrorPoint];
+        rightPixel.setColor(leftPixel.getColor());
+      }
+    }
+  }
   
   
   public void mirrorLeftArms()
@@ -170,8 +192,6 @@ public class Picture extends SimplePicture
       }
     }
   }
-  
-  
   
   
   public void mirrorRightArms()
@@ -244,6 +264,36 @@ public class Picture extends SimplePicture
     this.mirrorVertical();
     this.write("collage.jpg");
   }
+  
+  
+  
+  public void copy(Picture fromPic, 
+                 int startRow, int startCol,
+                 int fSR,      int fSC,
+                 int fER,      int fEC)
+  {
+    Pixel fromPixel = null;
+    Pixel toPixel = null;
+    Pixel[][] toPixels = this.getPixels2D();
+    Pixel[][] fromPixels = fromPic.getPixels2D();
+    for (int fromRow = fSR, toRow = startRow; 
+         fromRow < fER &&
+         toRow < toPixels.length; 
+         fromRow++, toRow++)
+    {
+      for (int fromCol = fSC, toCol = startCol; 
+           fromCol < fEC &&
+           toCol < toPixels[0].length;  
+           fromCol++, toCol++)
+      {
+        fromPixel = fromPixels[fromRow][fromCol];
+        toPixel = toPixels[toRow][toCol];
+        toPixel.setColor(fromPixel.getColor());
+      }
+    }   
+  }
+  
+  
   
   
   /** Method to show large changes in color 
