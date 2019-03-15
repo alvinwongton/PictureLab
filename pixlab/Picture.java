@@ -293,9 +293,7 @@ public class Picture extends SimplePicture
     }   
   }
   
-  
-  
-  
+ 
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
     */
@@ -305,6 +303,22 @@ public class Picture extends SimplePicture
     Pixel rightPixel = null;
     Pixel[][] pixels = this.getPixels2D();
     Color rightColor = null;
+    for (int row = 0; row < pixels.length; row++)
+    {
+      for (int col = 0; 
+           col < pixels[0].length-1; col++)
+      {
+        leftPixel = pixels[row][col];
+        rightPixel = pixels[row][col+1];
+        rightColor = rightPixel.getColor();
+        if (leftPixel.colorDistance(rightColor) > 
+            edgeDist)
+          leftPixel.setColor(Color.BLACK);
+        else
+          leftPixel.setColor(Color.WHITE);
+      }
+    }
+    
     for (int row = 0; row < pixels.length; row++)
     {
       for (int col = 0; 

@@ -73,11 +73,12 @@ public class PictureTester
   /** Method to test the copy */
   public static void testCopy()
   {
-    Picture gull = new Picture("seagull.jpg");
+    Picture gull = new Picture("beach.jpg");
     gull.explore();
-    Picture flower = new Picture("flower1.jpg");
-    gull.copy(flower,100,200);
-    gull.explore();
+    Picture flower = new Picture("snowman.jpg");//flower1.jpg
+    gull.copy(flower,10,10,60,160,180,230);//100,200
+    gull.explore();//function overloading can occur
+    //6 ints one side, 2 ints all
   }
   
   
@@ -110,8 +111,8 @@ public class PictureTester
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
-    testCopy();
-    //testEdgeDetection();
+    //testCopy();
+    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
